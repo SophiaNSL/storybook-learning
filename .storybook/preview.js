@@ -1,3 +1,9 @@
+import * as React from 'react'
+// 1. import `ChakraProvider` component
+import { ChakraProvider } from '@chakra-ui/react'
+import '@storybook/addon-console'
+
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   options: {
@@ -11,3 +17,13 @@ export const parameters = {
     },
   },
 }
+
+ // 2. Wrap ChakraProvider at the root of your app
+export const decorators = [
+  (Story) => (
+    <ChakraProvider>
+      <Story />
+    </ChakraProvider>
+
+  )
+]
